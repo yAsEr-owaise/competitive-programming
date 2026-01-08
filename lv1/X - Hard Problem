@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+bool isprime(int x){
+  if(x==2)return true;
+  else{
+    for (int i = 2; i < x; i++)
+    {
+     if(x%i==0)return false;
+
+    }
+    
+  }
+  return true;
+}
+ void solve(){
+ long long a,b,c;
+ cin>>a>>b>>c;
+ long long mx=min({a,b,c});
+ if(mx==a){
+  cout<<a<<" ";
+  if(b>c)cout<<c<<" "<<b;
+  else cout<<b<<" "<<c;
+ }
+ else if(mx==b){
+  cout<<b<<" ";
+  if(a>c)cout<<c<<" "<<a;
+  else cout<<a<<" "<<c;
+ }
+ else if(mx==c){
+  cout<<c<<" ";
+  if(a>b)cout<<b<<" "<<a;
+  else cout<<a<<" "<<b;
+ }
+ }
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+
+  //int t;
+//cin >> t;
+//while(t--){
+    solve();
+//cout<<endl;}
+
+}
