@@ -1,0 +1,47 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+bool isprime(int x){
+  if(x==2)return true;
+  else{
+    for (int i = 2; i < x; i++)
+    {
+     if(x%i==0)return false;
+
+    }
+    
+  }
+  return true;
+}
+ void solve(){
+int arr[100][100];
+int n;
+cin>>n;
+for (int i = 0; i < n; i++)
+{
+   for (int j = 0; j <  n; j++)
+   {
+     cin>>arr[i][j];
+   } 
+}
+  int sum1 = 0, sum2 = 0;
+
+    for(int i = 0; i < n; i++) {
+        sum1 += arr[i][i];          
+        sum2 += arr[i][n - 1 - i];   
+    }
+    cout<<abs(sum1-sum2);
+ }
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+
+  //int t;
+//cin >> t;
+//while(t--){
+    solve();
+//cout<<endl;}
+
+}
