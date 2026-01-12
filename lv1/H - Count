@@ -1,0 +1,49 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+bool isprime(int x){
+  if(x==2)return true;
+  else{
+    for (int i = 2; i < x; i++)
+    {
+     if(x%i==0)return false;
+
+    }
+    
+  }
+  return true;
+}
+ void solve(){
+int n,q;
+cin>>n>>q;
+int arr[1000];
+for(int i=0;i<n;i++)cin>>arr[i];
+int count=0;
+while(q--){
+int l,r,x;
+cin>>l>>r>>x;
+l--;
+r--;
+ for (int i = 0; i < n; i++)
+ {
+    if(arr[i]==x){
+      if(i>=l && i<=r)count++;
+    }
+ }
+ cout<<count<<endl;
+ count=0;
+}
+ }
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+
+  //int t;
+//cin >> t;
+//while(t--){
+    solve();
+//cout<<endl;}
+
+}
