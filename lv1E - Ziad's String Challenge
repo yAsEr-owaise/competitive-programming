@@ -1,0 +1,37 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+bool isprime(int x){
+  if(x==2)return true;
+  else{
+    for (int i = 2; i < x; i++)
+    {
+     if(x%i==0)return false;
+
+    }
+    
+  }
+  return true;
+}
+
+void solve() {
+string s;
+cin>>s;
+if(s.find('Y')!=string::npos && s.find('e')!=string::npos && s.find('s')!=string::npos){
+  cout<<"Ziad eld3eef";
+}
+else cout<<"Ziad is weak";
+}
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+ // int t;
+ // cin >> t;
+  // while(t--){
+    solve();
+ // cout<<endl;}
+
+}
