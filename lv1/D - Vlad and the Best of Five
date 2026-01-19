@@ -1,0 +1,82 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+#define ll long long ;
+bool isprime(int x){
+  if(x==2)return true;
+  else{
+    for (int i = 2; i < x; i++)
+    {
+     if(x%i==0)return false;
+
+    }
+    
+  }
+  return true;
+}
+void solve() {
+string s;
+cin>>s;
+int counta=0,countb=0;
+for (int i = 0; i <  s.length(); i++)
+{
+    if(s[i]=='A')counta++;
+    else countb++;
+}
+if(counta>=countb)cout<<"A\n";
+else cout<<"B\n";
+    }
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+ int t;
+  cin >> t;
+  while(t--)
+    solve();
+}
+
+
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+#define ll long long ;
+bool isprime(int x){
+  if(x==2)return true;
+  else{
+    for (int i = 2; i < x; i++)
+    {
+     if(x%i==0)return false;
+
+    }
+    
+  }
+  return true;
+}
+void solve() {
+string s;
+cin>>s;
+int counta=0,countb=0;
+for (int i = 0; i <  s.length(); i++)
+{
+    if(s[i]=='A')counta++;
+    else countb++;
+}
+if(counta>=countb)cout<<"A\n";
+else cout<<"B\n";
+    }
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+ int t;
+  cin >> t;
+  while(t--)
+    solve();
+}
+
+
