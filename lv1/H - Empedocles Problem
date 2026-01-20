@@ -1,0 +1,41 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+#define ll long long ;
+struct elements {
+  string a,b,c,d;
+};
+void solve() {
+elements arr[1000];
+int n;
+cin>>n;
+for (int i = 0; i < n; i++)
+{
+  cin>>arr[i].a>>arr[i].b>>arr[i].c>>arr[i].d;
+}
+for (int i = 0; i < 1; i++)
+{
+   for (int j = 0; j<n ; j++)
+   {
+     if(i==j)continue;
+      if(arr[i].a!=arr[j].a || arr[i].b!=arr[j].b ||arr[i].c!=arr[j].c || arr[i].d!=arr[j].d ){
+        cout<<"you were right";
+        return;
+      }
+   }
+}
+cout<<"Empedocles was right";
+}
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+  //int t;
+ // cin >> t;
+ // while(t--)
+    solve();
+}
+
+
