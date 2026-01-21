@@ -1,0 +1,64 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+#define ll long long ;
+///\\\/// ||\/|| /\/\/\/\/\/
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+#define len() length()
+#define all_vec(v) v.begin(), v.end()
+struct rec{
+   int x1,y1,x2,y2,x3,y3,x4,y4;
+};
+struct el{
+   long long area,ind;
+};
+bool cmp(el a,el  b){
+   if(a.area<b.area)return true;
+   else return false;
+}
+rec arr[100000];
+el ar[100000];
+void solve() {
+int n;
+cin>>n;
+
+for (int i = 0; i < n; i++)
+{ 
+ cin>>arr[i].x1>>arr[i].y1>>arr[i].x2>>arr[i].y2>>arr[i].x3>>arr[i].y3>>arr[i].x4>>arr[i].y4;
+}
+
+for (int i = 0; i < n; i++)
+{
+    long long l;
+    int w;
+    if(arr[i].y2==arr[i].y1){l=abs(arr[i].x2-arr[i].x1); w=abs(arr[i].y3-arr[i].y1);}
+   else if(arr[i].y3==arr[i].y1){l=abs(arr[i].x3-arr[i].x1); w=abs(arr[i].y3-arr[i].y4);}
+     else if(arr[i].y4==arr[i].y1){l=abs(arr[i].x4-arr[i].x1); w=abs(arr[i].y2-arr[i].y1);}
+     else if(arr[i].y2==arr[i].y3){l=abs(arr[i].x2-arr[i].x3); w=abs(arr[i].y3-arr[i].y1);}
+      else if(arr[i].y2==arr[i].y4){l=abs(arr[i].x2-arr[i].x4); w=abs(arr[i].y4-arr[i].y1);}
+       else  if(arr[i].y3==arr[i].y4){l=abs(arr[i].x3-arr[i].x4); w=abs(arr[i].y3-arr[i].y1);}
+        else if(arr[i].y2==arr[i].y1){l=abs(arr[i].x2-arr[i].x1); w=abs(arr[i].y3-arr[i].y1);}
+   ar[i].area=w*l;
+    ar[i].ind=i+1;
+}
+sort(ar,ar+n,cmp);
+for (int i = 0; i < n; i++)
+{
+   cout<<ar[i].ind<<" "<<ar[i].area<<endl;
+}
+
+   }
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+  //int t;
+ // cin >> t;
+ // while(t--)
+    solve();
+}
+
+
