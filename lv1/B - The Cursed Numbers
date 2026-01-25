@@ -1,0 +1,49 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+typedef long long ll;
+///\\\/// ||\/|| /\/\/\/\/\/
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+#define len() length()
+#define all_vec(v) v.begin(), v.end()
+string arr[100000];
+void solve() {
+int n;
+cin>>n;
+
+for (int i = 0; i < n; i++)
+{
+   cin>>arr[i];
+}
+long long sum=0;
+int freq[10]={};
+for (int i = 0; i < n; i++)
+{
+   for (int j = 0; j < arr[i].length(); j++)
+   {
+      freq[arr[i][j]-'0']++;
+   }
+   for (int j = 0; j < 10; j++)
+   {
+    if( freq[j]>1 ){sum+=stoi(arr[i]);
+    break;}
+   }
+   memset(freq, 0, sizeof(freq));
+}
+cout<<sum;
+
+}
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+  //int t;
+//cin >> t;
+ // while(t--)
+    solve();
+}
+
+
