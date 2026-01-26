@@ -1,0 +1,34 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+typedef long long ll;
+///\\\/// ||\/|| /\/\/\/\/\/
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+#define len() length()
+#define all_vec(v) v.begin(), v.end()
+const ll M = 1e9 + 7;
+void solve() {
+string s;
+cin>>s;
+int freq[26]={};
+for (int i = 0; i < s.len(); i++)
+{
+    freq[s[i]-'a']++;
+}
+sort(freq,freq+26,greater<int>());
+cout<<freq[0];
+}
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+  //int t;
+//cin >> t;
+  //while(t--)
+    solve();
+}
+
+
