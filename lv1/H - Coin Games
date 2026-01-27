@@ -1,0 +1,45 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+typedef long long ll;
+///\\\/// ||\/|| /\/\/\/\/\/
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+#define len() length()
+#define all_vec(v) v.begin(), v.end()
+const ll M = 1e9 + 7;
+const ll N=2*1e5;
+ll freq[2*N];
+int arr[N];
+void solve() {
+int n;
+    string s;
+    cin >> n >> s;
+    
+    int countU = 0;
+    for (char c : s) {
+        if (c == 'U') {
+            countU++;
+        }
+    }
+    
+    if (countU % 2 != 0) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+}
+
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+  int t;
+cin >> t;
+  while(t--)
+    solve();
+}
+
+
