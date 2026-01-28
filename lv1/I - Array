@@ -1,0 +1,68 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+typedef long long ll;
+///\\\/// ||\/|| /\/\/\/\/\/
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+#define len() length()
+#define all_vec(v) v.begin(), v.end()
+const ll M = 1e9 + 7;
+const ll N=2*1e5;
+void solve() {
+int n;
+    cin >> n;
+    int arr[105];
+    int arrs[105], arr1[105], arr0[105];
+    int counts = 0, count1 = 0, count0 = 0;
+
+    for (int i = 0; i < n; i++) cin >> arr[i];
+    sort(arr, arr + n);
+
+    // الخطوة 1: توزيع مبدئي
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < 0) arrs[counts++] = arr[i];
+        else if (arr[i] > 0) arr1[count1++] = arr[i];
+        else arr0[count0++] = arr[i];
+    }
+
+    // الخطوة 2: إذا ما في أعداد موجبة، انقل 2 من السالب للموجب
+    if (count1 == 0) {
+        arr1[count1++] = arrs[counts - 1];
+        arr1[count1++] = arrs[counts - 2];
+        counts -= 2;
+    }
+
+    // الخطوة 3: إذا تبقى عدد زوجي من السالب، انقل 1 للصفر
+    // (حتى لو نقلنا للموجب، لازم نشيك على اللي ضل بالسالب)
+    if (counts % 2 == 0) {
+        arr0[count0++] = arrs[counts - 1];
+        counts--;
+    }
+
+    // الطباعة
+    cout << counts << " ";
+    for (int i = 0; i < counts; i++) cout << arrs[i] << " ";
+    cout << endl;
+
+    cout << count1 << " ";
+    for (int i = 0; i < count1; i++) cout << arr1[i] << " ";
+    cout << endl;
+
+    cout << count0 << " ";
+    for (int i = 0; i < count0; i++) cout << arr0[i] << " ";
+    cout << endl;
+}
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+  //int t;
+//cin >> t;
+  //while(t--)
+    solve();
+}
+
+
