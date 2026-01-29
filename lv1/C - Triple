@@ -1,0 +1,46 @@
+
+#include <bits/stdc++.h>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+typedef long long ll;
+///\\\/// ||\/|| /\/\/\/\/\/
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+#define len() length()
+#define all_vec(v) v.begin(), v.end()
+const ll M = 1e9 + 7;
+const ll N=2*1e5;
+int arr[N];
+int freq[N+1];
+void solve() {
+int n;
+cin>>n;
+memset(freq,0,sizeof(freq));
+bool flag=0;
+for (int i = 0; i < n; i++)
+{
+    int x;
+    cin>>x;
+    freq[x]++;
+    if(freq[x]>=3 && flag==0){
+        cout<<x<<endl;
+        flag=1;
+    
+    }
+} 
+if(!flag)
+cout<<-1<<endl;
+
+}
+
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+  int t; cin >> t;
+   while(t--)
+     solve();
+}
+
+
