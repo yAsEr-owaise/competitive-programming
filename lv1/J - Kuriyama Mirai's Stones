@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp> 
+#include <ext/pb_ds/tree_policy.hpp>
+#include<iomanip>
+#include<numeric>
+using namespace std;
+using namespace __gnu_pbds;
+typedef long long ll;
+typedef tree<int, null_type, less<int>, rb_tree_tag, 
+             tree_order_statistics_node_update> ordered_set;
+///\\\/// ||\/|| /\/\/\/\/\/
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+#define len() length()
+#define all_vec(v) v.begin(), v.end()
+const ll M = 1e9 + 7;
+const ll N=2*1e5;
+ll pref[100001]={};
+ll prefs[100001]={};
+ll arr[100000];
+void solve() {
+int n;
+cin>>n;
+
+for (int i = 0; i < n; i++)
+{
+     cin>>arr[i];
+}
+for (int i = 1; i <= n; i++)
+{
+    pref[i]=pref[i-1]+arr[i-1];
+}
+sort(arr,arr+n);
+for (int i = 1; i <= n; i++)
+{
+    prefs[i]=prefs[i-1]+arr[i-1];
+}
+int m;
+cin>>m;
+while(m--){
+    int t,l,r;
+    cin>>t>>l>>r;
+    if(t==1)cout<<pref[r]-pref[l-1]<<endl;
+    else cout<<prefs[r]-prefs[l-1]<<endl;
+}
+}
+
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+   cout.tie(NULL);
+  //int t; cin >> t;
+  // while(t--)
+     solve();
+}
